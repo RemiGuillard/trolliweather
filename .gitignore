@@ -55,3 +55,6 @@ target/
 
 # VirtualEnv
 venv/
+
+# local conf file
+.env

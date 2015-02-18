@@ -77,11 +77,14 @@ DATABASES = {
     }
 }
 
-from mongoengine import connect
-MONGO_DATABASE_NAME = 'testdb'
-MONGO_HOST = '127.0.0.1'
-MONGO_PORT = 27017
-connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
+#from mongoengine import connect
+#MONGO_DATABASE_NAME = 'testdb'
+#MONGO_HOST = '127.0.0.1'
+#MONGO_PORT = 27017
+#connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
+from pymongo import MongoClient
+mongo_uri = os.environ.get('MONGOLAB_URI')
+MongoClient(mongo_uri)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
