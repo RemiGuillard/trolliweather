@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xsd!5@8$)b^f8sp5l3gja^k7ivp10d=dsyd7dz3ix52dfu3l$w'
+SECRET_KEY = 'mt*7$h5s7=dy-31)pg)cwf3!6c(mah5u!_*$l#=tjqerr=0kbf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,8 +40,6 @@ INSTALLED_APPS = (
     'mongodbforms',
     'mongoengine.django.mongo_auth',
 )
-
-
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
