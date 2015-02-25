@@ -1,11 +1,9 @@
+autoenv==1.0.0
 dj-database-url==0.3.0
 dj-static==0.0.6
-Django==1.7.4
+-e git+https://github.com/django/django.git@b8f9fd75910acdcbd7f485c4acc55f98a612d86c#egg=Django-dev
+django-bootstrap3==5.1.1
 django-toolbelt==0.0.1
 gunicorn==19.2.1
--e git+https://github.com/jschrewe/django-mongoadmin.git@d2c8854c98db9c094678b8c340bc485c387cc80c#egg=mongoadmin-master
--e git+https://github.com/carlware/django-mongodbforms.git@8922491fc2db1d106ca54bdc4f6f20a95c026e81#egg=mongodbforms-master
-mongoengine==0.8.7
 psycopg2==2.6
-pymongo==2.8
 static3==0.5.1

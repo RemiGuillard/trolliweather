@@ -36,9 +36,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mongoadmin',
-    'mongodbforms',
-    'mongoengine.django.mongo_auth',
+
+    'bootstrap3',
+
+    'weather_analytics',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,36 +56,16 @@ ROOT_URLCONF = 'trolliweather.urls'
 
 WSGI_APPLICATION = 'trolliweather.wsgi.application'
 
-
-MONGOADMIN_OVERRIDE_ADMIN = True
-
-AUTHENTICATION_BACKENDS = ( 
-           'mongoengine.django.auth.MongoEngineBackend',
- )
-AUTH_USER_MODEL = 'mongo_auth.MongoUser'
-MONGOENGINE_USER_DOCUMENT = 'mongoengine.django.auth.User'
-
-SESSION_ENGINE = 'mongoengine.django.sessions'
-
-# Database
-# https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.dummy',
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'weather_analytics',
+        'USER': os.environ.get('HEROKU_PG_USR'),
+        'PASSWORD': os.environ.get('HEROKU_PG_PWD'),
+        'HOST': os.environ.get('HEROKU_PG_HST'),
+        'PORT': os.environ.get('HEROKU_PG_PRT'),
     }
 }
-
-#from mongoengine import connect
-#MONGO_DATABASE_NAME = 'testdb'
-#MONGO_HOST = '127.0.0.1'
-#MONGO_PORT = 27017
-#connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
-from pymongo import MongoClient
-mongo_uri = os.environ.get('MONGOLAB_URI')
-MongoClient(mongo_uri)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
