@@ -1,9 +1,17 @@
+amqp==1.4.6
+anyjson==0.3.3
 autoenv==1.0.0
+billiard==3.3.0.19
+celery==3.1.17
 dj-database-url==0.3.0
 dj-static==0.0.6
--e git+https://github.com/django/django.git@b8f9fd75910acdcbd7f485c4acc55f98a612d86c#egg=Django-dev
+Django==1.8
 django-bootstrap3==5.1.1
+django-celery==3.1.16
 django-toolbelt==0.0.1
 gunicorn==19.2.1
+kombu==3.0.24
 psycopg2==2.6
+pytz==2015.2
+requests==2.6.0
 static3==0.5.1
